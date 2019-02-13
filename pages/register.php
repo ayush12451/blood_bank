@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
+<?php session_start();
+ob_start(); ?>
 <html>
 
 <head>
@@ -41,60 +43,15 @@
             font-family: myFont;
         }
     </style>
-    <script>
+    <script  type="text/javascript">
         $(document).ready(function() {
         $('select').formSelect();
         });
+        $(document).ready(function() {
+    $('input#input_text, textarea#textarea2').characterCounter();
+  });
     </script>
-    <script type="text/javascript">
-        $(document).ready(function()
-        {
-            $("#loding1").hide();
-            $("#loding2").hide();
-            $(".country").change(function()
-            {
-                $("#loding1").show();
-                var id=$(this).val();
-                var dataString = 'id='+ id;
-                $(".state").find('option').remove();
-                $(".city").find('option').remove();
-                $.ajax
-                ({
-                    type: "POST",
-                    url: "get_state.php",
-                    data: dataString,
-                    cache: false,
-                    success: function(html)
-                    {
-                        $("#loding1").hide();
-                        $(".state").html(html);
-                    } 
-                });
-            });
-            
-            
-            $(".state").change(function()
-            {
-                $("#loding2").show();
-                var id=$(this).val();
-                var dataString = 'id='+ id;
-            
-                $.ajax
-                ({
-                    type: "POST",
-                    url: "get_city.php",
-                    data: dataString,
-                    cache: false,
-                    success: function(html)
-                    {
-                        $("#loding2").hide();
-                        $(".city").html(html);
-                    } 
-                });
-            });
-            
-        });
-    </script>
+    
         
     
     
@@ -130,53 +87,44 @@
                             <br>
                             <br>
                             <div class="row">
-                                <form action="../scripts/register.php" method="POST" class="col s12">
+                                <form action="../scripts/register.php" method="post" class="col s12">
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="first_name" type="text" class="validate">
+                                            <input id="first_name" name="first_name"  type="text" class="validate">
                                             <label for="first_name">First Name</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <input id="last_name" type="text" class="validate">
+                                            <input id="last_name" name="last_name" type="text" class="validate">
                                             <label for="last_name">Last Name</label>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="input-field col s6">
-                                            <input id="email" type="email" class="validate">
+                                        <div class="input-field col s12">
+                                            <input id="email" name="email" type="email" class="validate">
                                             <label for="email">Email</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <input id="password" type="text" class="validate">
+                                            <input id="password" name="password" type="password" class="validate">
                                             <label for="password">Password </label>
                                         </div>
-
+                                        <div class="input-field col s6">
+                                            <input id="phone_no" name="phone_no" type="text" class="validate">
+                                            <label for="phone_no">Phone Number</label>
+                                        </div>
                                         <div class="input-field col s12">
-                                            <input id="address" type="text" class="validate">
+                                            <input id="address" name="address" type="text" data-length="200" class="validate">
                                             <label for="address">Address </label>
                                         </div>
                                         <div class="input-field col s6">
-                                            
-                                            <select name="state" class="browser-default">
-                                            <option selected="selected">--Select state--</option>
-                                            <?php
-                                                $stmt = $DB_con->prepare("SELECT * FROM state
-                                                while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-                                                {
-                                                    ?>
-                                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
-                                                    <?php
-                                                } 
-                                            ?>
-                                            </select>
+                                        <input id="state" name="state" type="text" style="text-transform: uppercase" class="validate">
+                                            <label for="state">State </label>                                           
                                         </div>
                                         <div class="input-field col s6">
-                                            <select name="city" class="browser-default">
-                                                <option selected="selected">--Select City--</option>                                                                                                                                               
-                                            </select>
+                                        <input id="city" name="city" type="text" style="text-transform: uppercase" class="validate">
+                                            <label for="city">City </label>
                                         </div>
                                         <div class="input-field col s6">
-                                                <label></label>
+                                                
                                             <select class="browser-default" name="blood_grp">
                                               <option value="" disabled selected>Blood Group</option>
                                               <option value="A+">A+</option>
@@ -193,14 +141,14 @@
                                           </div>
 
                                         <div class="input-field col s6">
-                                            <input id="age" type="text" class="validate">
+                                            <input id="age" name="age" type="number" class="validate">
                                             <label for="age">Age </label>
                                             <span class="helper-text">You must be over 18 to donate blood</span>
                                         </div>
 
                                         <br><br>
                                         <div class="row">
-                                        <button class="btn waves-effect waves-light red darken-2" type="submit" name="action">Submit
+                                        <button class="btn waves-effect waves-light red darken-2" type="submit" name="submit">Submit
                                             <i class="material-icons right">send</i>
                                         </button>
                                         </div>

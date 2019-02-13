@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php session_start();
+ob_start();
 <html>
 
 <head>
@@ -67,7 +69,7 @@
                             <br>
                             <div class="container">
                                 <div class="row">
-                                    <form action='login.php' class="col s12" method='post'>
+                                    <form action='../scripts/login.php' class="col s12" method='post'>
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <input class="validate" id="email-id" name="email_id" type="text">
