@@ -60,10 +60,11 @@ ob_start(); ?>
 <body bgcolor="#e0e0e0">
     <nav>
         <div class="nav-wrapper red darken-2">
-            <a href="index.html" class="brand-logo"><img src="../images/drops-clipart-printable-water-591685-9629097.png" height="50%" width="70"></a>
+        <a href="index.html" class="brand-logo"><img src="../images/drops-clipart-printable-water-591685-9629097.png" height="90%" width="70"></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#"><i class="material-icons">account_circle</i></a></li>
-                <li><a href="#">Sign in</a></li>
+                <li><a href="login.php"><i class="material-icons">account_circle</i></a></li>
+                <li><a href="register.php">Sign in</a></li>
+                <li><a href="donors.php">Find Donors</a></li>
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">More<i class="material-icons right">arrow_drop_down</i></a></li>
 
@@ -161,48 +162,44 @@ ob_start(); ?>
                         
     </main>
     <footer class="page-footer grey darken-3">
-        <div class="container">
-            <footer class="page-footer grey darken-3">
-                <div class="container">
-                    <div class="row">
-                        <div class="col l6 s12">
-                            <h5 class="white-text">Company Bio</h5>
-                            <p class="grey-text text-lighten-4">Project by:
-                                <br>
-                                <a href="https://github.com/ayush12451">Ayush</a>
-                                <br>
-                                <a href="https://github.com/achyutshantanu">Achyut</a>
-                                <br>
-                                <a href="https://github.com/devashsih">Devashish</a>
-                                <br>
-                                <a href="https://github.com/Areeb0206">Areeb</a>
-                        </div>
-
-                        <div class="col l3 s12">
-                            <h5 class="white-text">Links</h5>
-                            <ul>
-                                <li><a class="white-text" href='login.html'>Login</a></li>
-                                <li><a class="white-text" href="register.html">Register</a></li>
-                                <li><a class="white-text" href="#!">Link 3</a></li>
-                                <li><a class="white-text" href="#!">Link 4</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-copyright">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col s6">
-                                Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-                            </div>
-                            <div class="col s6">
-                                Follow this project on <a class="orange-text text-lighten-3" href="https://github.com/ayush12451/blood_bank">Github</a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        
+                        <h5 class="white-text">Project by:</h5>
+                        <ul>
+                            <li><a class="white-text" href="https://github.com/ayush12451">Ayush</a></li>                        
+                            <li><a class="white-text" href="https://github.com/achyutshantanu">Shantanu</a></li>
+                            <li><a class="white-text" href="https://github.com/devashsih">Devashish</a></li>
+                            <li><a class="white-text" href="https://github.com/Areeb0206">Areeb</a></li>
+                        </ul>
                 </div>
 
-            </footer>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="white-text" href='login.html'>Login</a></li>
+                        <li><a class="white-text" href="register.html">Register</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col s6">
+                        Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                    </div>
+                    <div class="col s6">
+                        Follow this project on <a class="orange-text text-lighten-3" href="https://github.com/ayush12451/blood_bank">Github</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
             <!--JavaScript at end of body for optimized loading-->
             <script type="text/javascript" src="../js/materialize.min.js"></script>
             <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
