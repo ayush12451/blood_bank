@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+
+<?php session_start();
+ob_start();
+if(empty($_SESSION['LoggedIn']))
+{
+    header('Location: login.php');
+}
+?>
 <html>
 
 <head>
@@ -79,28 +87,10 @@
             <div class="row">
                 <div>
                     <div class="card white z-depth-3">
-                        <div class="card-content">
-                            <br>
-                            <br>
-                            <div class="row" style="text-align: center">
-                                <img class="circle responsive-img" src="../images/Hand__5-512.png" style="height: 40% ;width: 40%"></img></div>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <div class="row">
-        
-                                <p class="flow-text">Blood is the living fluid that all life is based on. Blood is composed of 60% liquid part and 40% solid part. The liquid part called Plasma, made up of 90% water and 10% nutrients, hormones, etc. is easily replenished by food, medicines, etc. But the solid part that contains RBC (red blood cells), WBC (white blood cells) and Platelets take valuable time to be replaced if lost.
-                                    <br> This is where you come in. The time taken by a patient's body to replace it could cost his/her life. Sometimes the body might not be in a condition to replace it at all.
-                                    <br> As you know blood cannot be harvested it can only be donated. This means only you can save a life that needs blood.
-                                    <br> Every year India requires 40 million units of 250cc blood out of which only a meager 500,000 of blood units are available.
-                                    <br> Saving a life does not require heroic deeds. You could just do it with a small thought and an even smaller effort by saying "yes".</p>
-                            </div>
-                            <div class="row" style="text-align: center">
-                                <br>
-                                <br><a href="register.html" style="text-align: center" class="waves-effect waves-light btn-large red darken-2">Register</a></div>
-                        </div>
-
+                    <br><br>
+                    
+                    
+                    <br><br>
                     </div>
                 </div>
             </div>

@@ -40,25 +40,42 @@
 </head>
 
 <body bgcolor="#e0e0e0">
-    <nav>
-        <div class="nav-wrapper red darken-2">
-            
-            <a href="index.html" class="brand-logo"><img src="../images/drops-clipart-printable-water-591685-9629097.png" height="90%" width="70"></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="login.php"><i class="material-icons">account_circle</i></a></li>
-                <li><a href="register.php">Sign in</a></li>
-                <li><a href="donors.php">Find Donors</a></li>
-                <!-- Dropdown Trigger -->
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">More<i class="material-icons right">arrow_drop_down</i></a></li>
-
+<header>
+                <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> 
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>                 
+                <script language="javascript" type="text/javascript">
+                          
+                        
+                      $( document ).ready(function(){
+                      $(".button-collapse").sideNav();//mobile screen menu init
+                      $('.sidenav').sidenav();
+                        
+                      });
+                </script>
+            <nav class="white">
+                <div class="nav-wrapper " >
+                        <a href="index.html" class="brand-logo"><img src="../images/logo.png" height="80px" width="160px"></img></a>
+                        <a href="#" data-target="side-menu" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a href="user.php"><i class="material-icons  black-text">account_circle</i></a></li>
+                            <li><a href="register.php" class=" black-text">Register</a></li>
+                            <li><a href="donors.php" class=" black-text">Find Donors</a></li>
+                        </ul>
+                    
+                        
+                </div>
+            </nav>
+            <ul class="sidenav" id="side-menu">
+                    <li><a class=" black-text" href="login.php"><i class="material-icons">account_circle</i></a></li>
+                    <li><a class=" black-text" href="register.php">Sign in</a></li>
+                    <li><a class=" black-text" href="donors.php">Find Donors</a></li>
             </ul>
-        </div>
-    </nav>
+    </header>
     <main>
         <div class="container">
 
             <div class="row">
-                <div class="card white z-depth-3"><br><br>
+                <div class="card white z-depth-3"><br><br><?php if($_SESSION['contacted']==1){M.toast({html: 'Request sent to donor!'})} ?>
                 <h2 class='orange-text text-accent-3 center'><strong>Find Donors</strong></h2><br>
                     <div class="row" style="text-align:center"><br>
                     <form action="donors.php" method="post">
@@ -128,7 +145,7 @@
                         <li><a class="white-text" href='login.php'>Login</a></li>
                         <li><a class="white-text" href="register.php">Register</a></li>
                         <li><a class="white-text" href="donors.php">Donors</a></li>
-                        <li><a class="white-text" href="#!">Link 4</a></li>
+                        <li><a class="white-text" href="index.html">Home</a></li>
                     </ul>
                 </div>
             </div>
