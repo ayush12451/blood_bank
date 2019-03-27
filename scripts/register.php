@@ -12,8 +12,8 @@ if (isset($_POST['submit'])) {
  $blood_grp=  mysqli_real_escape_string($con,$_POST['blood_grp']);
  $age= mysqli_real_escape_string($con,$_POST['age']);
  $address= mysqli_real_escape_string($con,$_POST['address']);
- $state= strtoupper(mysqli_real_escape_string($con,$_POST['state']));
- $city=strtoupper(mysqli_real_escape_string($con,$_POST['city']));
+ $state= strtolower(mysqli_real_escape_string($con,$_POST['state']));
+ $city=strtolower(mysqli_real_escape_string($con,$_POST['city']));
  $pass=sha1($u_password);
 
  $sql = "INSERT INTO `user` (`first_name`, `last_name`, `email`, `password`, `phone_number`, `address`, `state`, `city`, `blood_grp`, `age`)
