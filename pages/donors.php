@@ -2,6 +2,8 @@
 <?php session_start(); ?>
 <html>
    <head>
+      <title>Find Donors In Your City</title>
+	  <link href="../images/logo1.png" rel="icon" sizes="32x32">
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->

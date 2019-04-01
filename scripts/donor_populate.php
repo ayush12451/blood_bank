@@ -8,14 +8,14 @@
     $color_temp=array_rand($colours,6);
     $color=$colours[$color_temp[0]];
     $html='<div class="col s12 m4">
-    <div class="card  z-depth-2" style="text-align:center">
-        <div class="card-content">
-            <i class="material-icons large" style="color:'.$color.';font-size: 140px">account_circle</i>
-            <span class="card-title">'.$name.'</span>
-            <p>Blood Group: '.$blood_grp.'</p>
-            <p >Age: '.$age.'</p>
-            </div>
-            <div class="card-action">';
+            <div class="card  z-depth-2" style="text-align:center">
+                <div class="card-content">
+                    <i class="material-icons large" style="color:'.$color.';font-size: 140px">account_circle</i>
+                    <span class="card-title">'.$name.'</span>
+                    <p>Blood Group: '.$blood_grp.'</p>
+                    <p >Age: '.$age.'</p>
+                </div>
+                <div class="card-action">';
             
     $html2='<form action="../scripts/contact_user.php" method="post">
                     <input type="hidden" id="email" name="email" value="'.$email.'">
@@ -27,7 +27,7 @@
     $html4='</div>
         </div>
     </div>';
-    if(!empty($_SESSION['Logged_in'])){$choice=$html2; }
+    if(!empty($_SESSION['LoggedIn'])){$choice=$html2; }
     else
     {$choice=$html3; } 
     echo $html.$choice.$html4;

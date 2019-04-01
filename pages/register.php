@@ -1,9 +1,16 @@
 <!DOCTYPE html> 
 <?php session_start();
-ob_start(); ?>
+ob_start(); 
+if(@$_SESSION['LoggedIn']==1)
+{
+	header('Location: user.php');
+}
+?>
 <html>
 
 <head>
+    <title>Register</title>
+	<link href="../images/logo1.png" rel="icon" sizes="32x32">    
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->

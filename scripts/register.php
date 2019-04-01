@@ -22,7 +22,10 @@ if (isset($_POST['submit'])) {
  if (mysqli_query($con, $sql)) 
  {					          			         					         
     $_SESSION['email']=$email;
-    $_SESSION['name']=$f_name;                                     
+    $_SESSION['number']=$number;
+    $_SESSION['address']=$address;
+    $_SESSION['age']=$age;
+    $_SESSION['name']=$f_name." ".$last_name;                                     
     $_SESSION['LoggedIn']=1;
     echo "New record created successfully";
     header('location: ../pages/user.php');

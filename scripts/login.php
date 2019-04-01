@@ -1,5 +1,5 @@
 <?php  
-
+session_start();
  if (isset($_POST['submit'])) {
 
 require 'db_info.php';
@@ -18,8 +18,14 @@ if(mysqli_num_rows($checklogin) == 1)
 {
 $row = mysqli_fetch_array($checklogin);
                                     
-$name=$row['first_name'];                                                                          
+$name=$row['first_name']." ".$row['last_name'];
+$num=$row['phone_number'];
+$address=$row['address'];
+$age=$row['age'];
+$_SESSION['number']=$num;                                                                          
 $_SESSION['email']=$email_id;
+$_SESSION['address']=$address;
+    $_SESSION['age']=$age;
 $_SESSION['name']=$name;                                     
 $_SESSION['LoggedIn']=1;
 echo "<h3>Success.</h3>";
