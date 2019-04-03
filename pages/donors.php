@@ -67,7 +67,7 @@
          <div class="container">
             <div class="row">
                <div class="card white z-depth-3">
-                  <br><br><?php if(@$_SESSION['contacted']==1){print("M.toast({html: 'Request sent to donor!'})");} ?>
+                  <br><br><?php if(@$_SESSION['contacted']==1){print("<script type="text/JavaScript">M.toast({html: 'Request sent to donor!'})"</script>);} ?>
                   <h2 class='orange-text text-accent-3 center'><strong>Find Donors</strong></h2>
                   <br>
                   <div class="row" style="text-align:center">
